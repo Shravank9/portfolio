@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import { Mail, Briefcase, ExternalLink, Code2, Award, Users } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
@@ -10,6 +11,12 @@ import automotivePortalImg from './assets/automotive_portal.png';
 import factoryiqPortalImg from './assets/factoryiq_portal.png';
 
 function App() {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
   return (
     <>
       <nav id="desktop-nav" className="navbar">
@@ -24,11 +31,30 @@ function App() {
         </div>
       </nav>
 
+      <nav id="hamburger-nav" className="hamburger-nav">
+        <div className="nav-brand">Shravan Kumar</div>
+        <div className="hamburger-menu">
+          <div className={`hamburger-icon ${menuActive ? 'open' : ''}`} onClick={toggleMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div className={`menu-links ${menuActive ? 'open' : ''}`}>
+            <a href="#about" onClick={toggleMenu}>About</a>
+            <a href="#experience" onClick={toggleMenu}>Experience</a>
+            <a href="#coding-profiles" onClick={toggleMenu}>Coding Profiles</a>
+            <a href="#projects" onClick={toggleMenu}>Projects</a>
+            <a href="#achievements" onClick={toggleMenu}>Achievements</a>
+            <a href="#contact" onClick={toggleMenu}>Contact</a>
+          </div>
+        </div>
+      </nav>
+
       <section id="hero" className="hero">
         <div className="hero-pic-container">
           {/* Placeholder for the user's photo. They can upload a profile.png to the public folder later */}
           <img
-            src="/favicon.svg"
+            src="./favicon.svg"
             alt="Profile picture of Gandesiri Shravan Kumar"
             className="about-pic"
             onError={(e) => {
@@ -41,7 +67,7 @@ function App() {
           <h1 className="title">Gandesiri Shravan Kumar</h1>
           <h2 className="section__text__p2">AI & ML Enthusiast</h2>
           <div className="hero-btns">
-            <a href="/resume.pdf" download className="btn btn-color-1" style={{ backgroundColor: '#555', color: 'white', borderColor: '#555' }}>Download CV</a>
+            <a href="./resume.pdf" download className="btn btn-color-1" style={{ backgroundColor: '#555', color: 'white', borderColor: '#555' }}>Download CV</a>
             <a href="#contact" className="btn btn-color-1">Contact Info</a>
           </div>
           <div id="socials-container">
@@ -182,8 +208,8 @@ function App() {
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Virtual Wardrobe Experience with AI</h3>
             <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>Upload your photo and a garment image for realistic AI fitting. Track clothing expenses, manage your wardrobe, and analyze spending. Uses HR-VITON, pose detection, and segmentation models.<br/><br/><span style={{ fontSize: '0.85rem', fontStyle: 'italic', opacity: 0.8 }}>*Live demo is a simplified conceptual version due to ML hardware hosting constraints.</span></p>
             <div className="hero-btns" style={{ marginTop: 'auto' }}>
-              <a href="https://github.com/Shravank9/virtual-Wardrobe-experience-witha-AI" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><FaGithub size={18} /> GitHub</a>
-              <a href="https://virtual-wardrobe-experience-witha-ai-amcguxdp9pj3whdxbd4z3k.streamlit.app" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><ExternalLink size={18} /> Live Demo</a>
+              <a href="https://github.com/Shravank9/virtual-Wardrobe-experience-witha-AI" className="btn btn-color-2 project-btn"><FaGithub size={18} /> GitHub</a>
+              <a href="https://virtual-wardrobe-experience-witha-ai-amcguxdp9pj3whdxbd4z3k.streamlit.app" className="btn btn-color-2 project-btn"><ExternalLink size={18} /> Live Demo</a>
             </div>
           </div>
           <div className="card">
@@ -191,8 +217,8 @@ function App() {
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Sign to Text & Vice Versa</h3>
             <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>Real-time Indian Sign Language translation to text and vice versa. Based on Machine Learning models like MediaPipe and LSTM to provide a seamless bi-directional communication pipeline.<br/><br/><span style={{ fontSize: '0.85rem', fontStyle: 'italic', opacity: 0.8 }}>*Live demo is a simplified conceptual version due to ML hardware hosting constraints.</span></p>
             <div className="hero-btns" style={{ marginTop: 'auto' }}>
-              <a href="https://github.com/Shravank9/Sign-to-Text-Conversion-Using-AI" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><FaGithub size={18} /> GitHub</a>
-              <a href="https://sign-to-text-conversion-using-ai-wetnvz4byylezufjbxajlj.streamlit.app" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><ExternalLink size={18} /> Live Demo</a>
+              <a href="https://github.com/Shravank9/Sign-to-Text-Conversion-Using-AI" className="btn btn-color-2 project-btn"><FaGithub size={18} /> GitHub</a>
+              <a href="https://sign-to-text-conversion-using-ai-wetnvz4byylezufjbxajlj.streamlit.app" className="btn btn-color-2 project-btn"><ExternalLink size={18} /> Live Demo</a>
             </div>
           </div>
           <div className="card">
@@ -200,8 +226,8 @@ function App() {
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Heart Failure Detection</h3>
             <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>Detects Chronic Heart Failure (CHF) using a Random Forest Aggregate Model (RFAM) trained on medical data. Predicts CHF based on key clinical features, using data preprocessing to support early diagnosis.<br/><br/><span style={{ fontSize: '0.85rem', fontStyle: 'italic', opacity: 0.8 }}>*Live demo is a simplified conceptual version due to ML hardware hosting constraints.</span></p>
             <div className="hero-btns" style={{ marginTop: 'auto' }}>
-              <a href="https://github.com/Shravank9/Chronic-Heart-Failure-Detection-using-RFAM" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><FaGithub size={18} /> GitHub</a>
-              <a href="https://chronic-heart-failure-detection-using-rfam-eqf4mjigekb3bndjheq.streamlit.app/" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><ExternalLink size={18} /> Live Demo</a>
+              <a href="https://github.com/Shravank9/Chronic-Heart-Failure-Detection-using-RFAM" className="btn btn-color-2 project-btn"><FaGithub size={18} /> GitHub</a>
+              <a href="https://chronic-heart-failure-detection-using-rfam-eqf4mjigekb3bndjheq.streamlit.app/" className="btn btn-color-2 project-btn"><ExternalLink size={18} /> Live Demo</a>
             </div>
           </div>
           <div className="card">
@@ -209,8 +235,8 @@ function App() {
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Nexgile Automotive Portal</h3>
             <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>Full-featured React automotive dealership portal with robust modules for CRM, inventory management, sales tracking, and service operations. <br/><br/><span style={{ fontSize: '0.9rem' }}><strong>Admin:</strong> manager@nexgile.com (pw: demo123)<br/><strong>User:</strong> test@nexgile.com (pw: demo123)</span></p>
             <div className="hero-btns" style={{ marginTop: 'auto' }}>
-              <a href="https://github.com/Shravank9/nexgile-automotive-portal" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><FaGithub size={18} /> GitHub</a>
-              <a href="https://nexgile-automotive-portal.vercel.app" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><ExternalLink size={18} /> Live Demo</a>
+              <a href="https://github.com/Shravank9/nexgile-automotive-portal" className="btn btn-color-2 project-btn"><FaGithub size={18} /> GitHub</a>
+              <a href="https://nexgile-automotive-portal.vercel.app" className="btn btn-color-2 project-btn"><ExternalLink size={18} /> Live Demo</a>
             </div>
           </div>
           <div className="card">
@@ -218,8 +244,8 @@ function App() {
             <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>Nexgile FactoryIQ Portal</h3>
             <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>A comprehensive React-based Manufacturing Excellence Portal. Features advanced modules for operations tracking, real-time analytics, quality control, supply chain optimization, and after-sales management. <br/><br/><span style={{ fontSize: '0.9rem' }}><strong>Admin:</strong> admin@nexgile.com (pw: admin123)<br/><strong>User:</strong> jane@customer.com (pw: customer123)</span></p>
             <div className="hero-btns" style={{ marginTop: 'auto' }}>
-              <a href="https://github.com/Shravank9/nexgile-factoryiq-portal" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><FaGithub size={18} /> GitHub</a>
-              <a href="https://nexgile-factoryiq-portal.vercel.app" className="btn btn-color-2" style={{ padding: '0.8rem', width: '10rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><ExternalLink size={18} /> Live Demo</a>
+              <a href="https://github.com/Shravank9/nexgile-factoryiq-portal" className="btn btn-color-2 project-btn"><FaGithub size={18} /> GitHub</a>
+              <a href="https://nexgile-factoryiq-portal.vercel.app" className="btn btn-color-2 project-btn"><ExternalLink size={18} /> Live Demo</a>
             </div>
           </div>
         </div>
@@ -229,12 +255,12 @@ function App() {
         <p className="section__text__p1">Have a look at My</p>
         <h1 className="section-title">Achievements</h1>
         <div className="grid-container">
-          <div className="card" style={{ flex: 'none', width: '45%' }}>
+          <div className="card achievement-card">
             <Award size={48} color="var(--text-primary)" style={{ marginBottom: '15px' }} />
             <h3 style={{ color: 'var(--text-primary)' }}>Top Performer</h3>
             <p style={{ color: 'var(--text-secondary)' }}>1st Prize in B-PLAN PITCH</p>
           </div>
-          <div className="card" style={{ flex: 'none', width: '45%' }}>
+          <div className="card achievement-card">
             <Code2 size={48} color="var(--text-primary)" style={{ marginBottom: '15px' }} />
             <h3 style={{ color: 'var(--text-primary)' }}>Problem Solver</h3>
             <p style={{ color: 'var(--text-secondary)' }}>Solved 200+ DSA problems on LeetCode, CodeChef, Codeforces, HackerRank, and HackerEarth.</p>
