@@ -3,6 +3,7 @@ import './App.css';
 import { Mail, Briefcase, ExternalLink, Code2, Award, Users } from 'lucide-react';
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import { SiCodechef, SiLeetcode, SiCodeforces } from 'react-icons/si';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 import signToTextImg from './assets/sign_to_text.png';
 import heartFailureImg from './assets/heart_failure.png';
@@ -303,6 +304,7 @@ function App() {
         </nav>
         <p style={{ fontSize: '1.05rem' }}>Copyright © {new Date().getFullYear()} <strong>Gandesiri Shravan Kumar</strong>. All Rights Reserved.</p>
       </footer>
+      <SpeedInsights />
     </>
   );
 }
