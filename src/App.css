@@ -73,6 +73,11 @@
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.card .hero-btns {
+  width: 100%;
 }
 
 #socials-container {
@@ -373,7 +378,8 @@ footer p {
 
 .project-btn {
   padding: 0.8rem;
-  width: 10rem;
+  flex: 1;
+  min-width: 120px;
   white-space: nowrap;
   display: flex;
   align-items: center;
