@@ -56,9 +56,10 @@
 }
 
 .hero-text h1 {
-  font-size: 3rem;
+  font-size: clamp(1.4rem, 6vw, 3rem);
   text-align: center;
   margin: 1rem 0;
+  white-space: nowrap;
 }
 
 .hero-text h2 {
@@ -472,10 +473,6 @@ footer p {
     height: 250px;
     width: 250px;
     border-width: 8px;
-  }
-  
-  .hero-text h1 {
-    font-size: 2rem;
   }
   
   .hero-text h2 {
