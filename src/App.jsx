@@ -91,7 +91,10 @@ function App() {
           <div className="details-container">
             <Briefcase size={32} color="#333" style={{ marginBottom: '1rem' }} />
             <h3>Experience</h3>
-            <p>AI-ML Virtual Internship<br />AICTE & Google for Developers</p>
+            <p style={{ fontWeight: '600', marginBottom: '2px' }}>AI-ML Virtual Intern</p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>AICTE & Google for Developers</p>
+            <p style={{ fontWeight: '600', marginBottom: '2px' }}>Data Annotation Intern</p>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Tao Digital Solutions</p>
           </div>
           <div className="details-container">
             <Users size={32} color="#333" style={{ marginBottom: '1rem' }} />
@@ -104,7 +107,7 @@ function App() {
             Welcome to my portfolio!
           </p>
           <p style={{ marginBottom: '1rem' }}>
-            I’m Gandesiri Shravan Kumar. Having successfully completed an AI-ML Virtual Internship program supported by AICTE and Google for Developers, I bring expertise in Python, React, Node.js, and Machine Learning frameworks, building intelligent AI applications and scalable full-stack solutions.
+            I’m Gandesiri Shravan Kumar. With experience as an AI-ML Virtual Intern (supported by AICTE and Google for Developers) and as a Data Annotation Intern at Tao Digital Solutions, I bring expertise in Python, React, Node.js, and Machine Learning frameworks, building intelligent AI applications and scalable full-stack solutions.
           </p>
           <p style={{ marginBottom: '1rem' }}>
             I have completed my B.Tech in Computer Science and Engineering, specializing in Artificial Intelligence and Machine Learning from CMR Technical Campus (awaiting final semester results). Over the years, I’ve developed a strong foundation in full-stack development, software engineering, problem-solving, and data-driven design.
