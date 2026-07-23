@@ -90,8 +90,9 @@
 
 .hero-pic-container {
   display: flex;
-  height: 440px;
-  width: 440px;
+  height: 420px;
+  width: 420px;
+  flex-shrink: 0;
   margin: auto 0;
   justify-content: center;
   align-items: center;
@@ -398,7 +399,7 @@ footer p {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   section {
     margin: 0 4%;
   }
